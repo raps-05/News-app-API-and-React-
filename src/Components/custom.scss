@@ -1,0 +1,103 @@
+/* // Import Bootstrap functions and variables */
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+/* // Define custom pastel colors */
+$pastel-colors: (
+  "pastel-primary": #b2ced9,
+  "pastel-secondary": #c5c5bc,
+  "pastel-success": #77DD77,
+  "pastel-danger": #FFB7B2,
+  "pastel-warning": #FFD1DC,
+  "pastel-info": #B39EB5,
+  "pastel-light": #FDFD96,
+  "pastel-dark": rgb(165, 149, 149)
+);
+
+.nav-link {
+  /* color: #000000; */ /* Default text color */
+  transition: color 0.5s; /* Smooth transition for color change */
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  color: white; /* Change text color on hover */
+  border-radius: 5px;
+  border: 1px solid black; /* Added missing 'solid' value */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.option-list{
+  font-family: 'Garamond', serif;
+  border: black 1px solid;
+  padding: 5px;
+  border-radius: 5px;
+}
+.scrolling-text-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000; /* Background color */
+  color: white; /* Corrected text color to ensure visibility */
+  padding: 10px 0; /* Padding for vertical space */
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 10s linear infinite;
+  
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.footer-text
+{
+position: relative;
+width: 100%;
+overflow: hidden;
+background-color: #000; /* Background color */
+color: white; /* Corrected text color to ensure visibility */
+padding: 10px 0; /* Padding for vertical space */
+justify-items: space-between;
+justify-content: center;
+padding-left: 30%;
+font-family: 'Garamond', serif;
+
+}
+.footer{
+  // position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000; /* Background color */
+  color: white; /* Corrected text color to ensure visibility */
+  padding: 10px 0; /* Padding for vertical space */
+  justify-items: space-between;
+  justify-content: center;
+  font-family: 'Garamond', serif;
+}
+
+
+
+/* // Merge custom colors with Bootstrap theme colors */
+$theme-colors: map-merge($theme-colors, $pastel-colors);
+
+/* // Import the rest of Bootstrap */
+@import "node_modules/bootstrap/scss/bootstrap";
